@@ -13,6 +13,7 @@ mixer.music.set_volume(0.7)
 app = Flask(__name__)
 api = Api(app)
 
+#constants dangerous
 db_name = "sc_app"
 db_col_name = "Users"
 
@@ -27,20 +28,22 @@ def getUserFromUID(uid):
         try:
             db_col_obj = db_obj[db_col_name]
         except (IndexError, KeyError):
-            print("Collection does not exist in database, major error")
+            print("Collection does not exist in database, major error...contact ISA MPSTME")
+            exit(0)
 
-        query = {'first_name':uid}
+        query = {'uid':uid}
         results = db_col_obj.find(query)
         for i in results:
             # print(i)
-            return i['first_name'], i['last_name']
+            return i['name']
     else:
-        print("User doesn't exist in database") 
+        print("Database doesn't exist in list of databases, major error...contact ISA MPSTME")
+        exit(0) 
 
 
 def emergency(uid, location):
-    fn, ln = getUserFromUID(uid)
-    print(f"{fn} {ln} is has clicked the sos button, their location is {googleMapsLinkGenerator(location)}")
+    fn = getUserFromUID(uid)
+    print(f"{fn} is has clicked the sos button, their location is {googleMapsLinkGenerator(location)}")
     mixer.music.play()
 
 
