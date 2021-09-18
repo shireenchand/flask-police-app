@@ -1,1 +1,1 @@
-web:gunicorn crud:userdbflaskapp
+web:gunicorn userdbflaskapp:crud
