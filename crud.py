@@ -78,7 +78,7 @@ db_col_name = "Users"
 
 #pymongo init to get handle of collections object
 def pymongo_init():
-    mongo_client = pymongo.MongoClient("mongodb://localhost:27017/")
+    mongo_client = pymongo.MongoClient("mongodb+srv://Aaryadev:aurora1127@cluster0.jvar5.mongodb.net/sc_app?retryWrites=true&w=majority")
     if db_name in mongo_client.list_database_names():
         db_obj = mongo_client[db_name]
         try:
