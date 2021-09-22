@@ -188,8 +188,6 @@ def deleteUser(uid):
             found_flag = 1
             
             myquery = { "uid": uid}
-            # newvalues = { "$set": {"uid":int(uid), "name":name, "rmn":rmn, "blood_group":blood_group, "e_contactname":e_contactname, 
-            # "e_contactnum":e_contactnum, "aadharnum":aadharnum} }
             db_col_obj.delete_one(myquery)
 
     if found_flag == -1:
