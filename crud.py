@@ -135,7 +135,7 @@ def insertUser(userDetailsJson):
         "relativename": userDetailsJson['relativename'], "relativeaddress": userDetailsJson['relativeaddress']}
         
         db_col_obj.insert_one(insert_obj)
-        print(f"\n\nNew User Added -> {userDetailsJson['uid']}")
+        print(f"\n\nNew User Added -> {str(user_uid)}")
         return 1
         # print(f"UID: {insert_obj['uid']}")
         # print(f"Name: {insert_obj['name']}")
