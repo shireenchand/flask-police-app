@@ -200,6 +200,6 @@ def deleteUser(uid):
 # insertUser("Aaryadev Chandra", 9711155179, "B+ve", "Swati Chandra", 9819902423, 123456778912)
 # updateUSerInfo(7735054, "chandra aaryadev", 9711155179, "B+ve", "Swati Chandra", 9819902423, 123456778912)
 
-userdbflaskapp.run(debug=True)
+userdbflaskapp.run()
 
 
